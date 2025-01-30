@@ -1,3 +1,4 @@
+#CONVERTS GIVEN NUMBER INTO BINARY
 def main():
     #ask user for the number
     num = int(input("Number: "))
