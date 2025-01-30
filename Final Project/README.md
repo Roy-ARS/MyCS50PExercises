@@ -33,12 +33,8 @@ Similarly, a row means the player has the same number of coordinates with a cons
 The diagonal from the upper left to the bottom right consists of all coordinates that are matching pairs, with the same value in x and y for the size of the board.</br>
 For the diagonal from the upper right to the bottom left, the getDiagonal() function returns a list of tuples that the diagonal must have. In this direction, the numbers on the x axis start at 0 and increase until they reach the size of the board, while the numbers on the y axis go in reverse: they start at the size of the board and end at 0.</br>
 Examples for each case in a 3x3 grid:
-<style>
-r { color: Red }
-b { color: Blue }
-g { color: Green }
-</style>
->[(0,<r>0</r>),(1,<r>0</r>),(2,<r>0</r>)] #First column complete wins</br>
+
+>[(0,*0*),(1,*0*),(2,*0*)] #First column complete wins</br>
 [(<r>0</r>,0),(<r>0</r>,1),(<r>0</r>,2)] #First row complete wins</br>
 [(<g>0,0</g>),(<g>1,1</g>),(<g>2,2</g>)] #Diagonal from upper left to bottom right wins</br>
 [(<r>0</r>,<b>2</b>),(<r>1</r>,<b>1</b>),(<r>2</r>,<b>0</b>)] #diagonal from upper right to bottom left wins
