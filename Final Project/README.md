@@ -34,7 +34,7 @@ The diagonal from the upper left to the bottom right consists of all coordinates
 For the diagonal from the upper right to the bottom left, the getDiagonal() function returns a list of tuples that the diagonal must have. In this direction, the numbers on the x axis start at 0 and increase until they reach the size of the board, while the numbers on the y axis go in reverse: they start at the size of the board and end at 0.</br>
 Examples for each case in a 3x3 grid:
 
->[(0,**0**),(1,**0**),(2,**0**)] #First column complete wins</br>
+[(0,**0**),(1,**0**),(2,**0**)] #First column complete wins</br>
 [(**0**,0),(**0**,1),(**0**,2)] #First row complete wins</br>
 [(**0,0**),(**1,1**),(**2,2**)] #Diagonal from upper left to bottom right wins</br>
 [(**0**,*2*),(**1**,*1*),(**2**,*0*)] #diagonal from upper right to bottom left wins
