@@ -1,0 +1,97 @@
+{% extends "base.html" %}
+
+{% block head %}
+<!-- This style is applied here in order to use variables passed from flask-->
+<style>
+    table.bigTable td {
+        background-color: rgb(72, 110, 49);
+        border: yellow 2px solid;
+        padding: 0;
+        vertical-align: middle;
+        text-align: center;
+        height: {{400/size-2}}px;
+        width: auto;
+    }
+    /*colors are taken from symbols dictionary*/
+    #player1 {
+        background-color: rgb{{symbols[player1Name][1]}};
+    }
+    #player2 {
+        background-color: rgb{{symbols[player2Name][1]}};
+    }
+</style>
+{% endblock %}
+
+
+{% block body %}
+{% if winner %}
+<p class="winner">CONGRATULATIONS {{playerName.upper()}} WINS!!!!!.</p>
+{% else %}
+<!--player+(players.keys()|list).index(player)+1 adds a 1 or a 2 to the id tag
+    player1 or player2 id style, according to index of players dict keys list + 1
+    this ensures that correct color is always the same as more rounds are played-->
+<p>It's
+    <img class="imgTurn" id="player{{(players.keys()|list).index(playerName)+1}}"
+    src="../static/img/{{symbols[playerName][0]}}" alt="player turn">
+{{playerName}}'s turn</p>
+{% endif %}
+<div class="row">
+    <div class="score-column">
+        {% for player in playerWins %}
+            <p class="score">{{player}} : </p>
+            <p class="score" id="score">
+                <img class="imgScore" id="player{{(players.keys()|list).index(player)+1}}"
+                src="../static/img/{{symbols[player][0]}}" alt="player symbol">
+                {{playerWins[player]}}
+            </p>
+            </br></br>
+        {% endfor %}
+    </div>
+    <div class="game">
+        <table class="bigTable">
+            <!--rows and columns drawn dinamically according to size of board-->
+            {% for row in range(size) %}
+            <tr>
+                {% for column in range(size) %}
+                    {% if (row,column) in players[player1Name] %}
+                        <td id="player1">
+                            <!--image are taken from symbols dictionary-->
+                            <img class="imgGame" src="../static/img/{{symbols[player1Name][0]}}" alt="player 1">
+                        </td>
+                    {% elif (row,column) in players[player2Name] %}
+                        <td id="player2">
+                            <img class="imgGame" src="../static/img/{{symbols[player2Name][0]}}" alt="player 2">
+                        </td>
+                    {% else %}
+                        {% if winner %}
+                            <!--if there is a winner cells are out of the form-->
+                            <td id="default"></td>
+                        {% else %}
+                        <!--cells availables are drawn in default style
+                        and asigned a coordinate (row, column) according to the loop-->
+                            <td id="default">
+                                <form action="" method="POST">
+                                    <input type="submit" class="default" value="" name="boxVisual"/>
+                                    <input type="hidden" class="default" value={{row}},{{column}} name="box"/>
+                                </form>
+                            </td>
+                        {% endif %}
+                    {% endif %}
+                {% endfor %}
+            </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <div class="score-column">
+    </div>
+</div>
+<div class="foot">
+    <form action="" method="POST">
+        <!--To enable the button PLAY AGAIN only if there is a winner or the board is full-->
+        {% if (players[player1Name]|count + players[player2Name]|count) == (size*size) or winner %}
+            <input type="submit" class="button" value="PLAY AGAIN" name="box" />
+        {% endif %}
+        <input type="submit" class="button" value="HOME" name="box" />
+    </form>
+</div>
+{% endblock %}

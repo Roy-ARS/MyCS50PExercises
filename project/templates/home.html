@@ -1,0 +1,125 @@
+{% extends "base.html" %}
+
+{% block head %}
+
+{% endblock %}
+
+
+{% block body %}
+<form action="" method="POST">
+    <div class="row">
+        <div class="column">
+            <p>Player 1, choose your name</p>
+            <div><input type="text" class="name" value="" name="player1Name" maxlength="20"/></div>
+            <p>Select your symbol</p>
+            <table class="select-symbol">
+                <tr>
+                    <td>
+                        <label>
+                            <input type="radio" name="imageP1" value="img_1.png" class="image-select">
+                            <img src="../static/img/img_1.png" alt="Problem?">
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" name="imageP1" value="img_2.png" class="image-select">
+                            <img src="../static/img/img_2.png" alt="Sad dog">
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" name="imageP1" value="img_3.png" class="image-select">
+                            <img src="../static/img/img_3.png" alt="it's fine">
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            <input type="radio" name="imageP1" value="img_4.png" class="image-select">
+                            <img src="../static/img/img_4.png" alt="CS50 duck">
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" name="imageP1" value="img_5.png" class="image-select">
+                            <img src="../static/img/img_5.png" alt="David">
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" name="imageP1" value="img_6.png" class="image-select">
+                            <img src="../static/img/img_6.png" alt="Cat">
+                        </label>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="center-column">
+            <div class="center-options"></div>
+            <div class="center-options"></div>
+            <div class="center-options">
+                <label for="cells">Select the size of the game</label>
+                <select id="cells" name="size">
+                    <option value=3>3x3</option>
+                    <option value=4>4x4</option>
+                    <option value=5>5x5</option>
+                </select>
+            </div>
+            <div class="center-options">
+            <input type="submit" class="button" value="START" name="start" />
+            </div>
+        </div>
+        <div class="column">
+            <p>Player 2, choose your name</p>
+            <div><input type="text" class="name" value="" name="player2Name" maxlength="20"/></div>
+            <p>Select your symbol</p>
+            <table class="select-symbol">
+                <tr>
+                    <td>
+                        <label>
+                            <input type="radio" name="imageP2" value="img_1.png" class="image-select">
+                            <img src="../static/img/img_1.png" alt="Problem?">
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" name="imageP2" value="img_2.png" class="image-select">
+                            <img src="../static/img/img_2.png" alt="Sad dog">
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" name="imageP2" value="img_3.png" class="image-select">
+                            <img src="../static/img/img_3.png" alt="it's fine">
+                        </label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label>
+                            <input type="radio" name="imageP2" value="img_4.png" class="image-select">
+                            <img src="../static/img/img_4.png" alt="CS50 duck">
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" name="imageP2" value="img_5.png" class="image-select">
+                            <img src="../static/img/img_5.png" alt="David">
+                        </label>
+                    </td>
+                    <td>
+                        <label>
+                            <input type="radio" name="imageP2" value="img_6.png" class="image-select">
+                            <img src="../static/img/img_6.png" alt="Cat">
+                        </label>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</form>
+<div class="foot">
+
+</div>
+{% endblock %}

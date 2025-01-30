@@ -1,0 +1,206 @@
+* {
+  box-sizing: border-box;
+}
+
+.flex-cont {
+  display: flex;
+}
+
+.flex-cont > div {
+  margin: auto;
+}
+
+div {
+  position: relative;
+  text-align: center;
+  /*border: 1px solid yellow;*/
+}
+
+.game {
+  width: 450px;
+  vertical-align: middle;
+  height: 405px;
+}
+
+.foot {
+  height: 30px;
+}
+
+.row {       /*of the whole page*/
+  display: flex;
+  vertical-align: bottom;
+}
+.column {    /*of the whole page*/
+  flex: 40%;
+  height: auto;
+}
+
+.center-column { /*of the whole page*/
+  flex: 20%;
+  vertical-align: middle;
+}
+
+.score-column {
+  flex: 20%;
+  text-align: right;
+  vertical-align: top;
+  padding: 0;
+}
+
+.select-symbol {
+  border: yellow 2px solid;
+}
+
+.center-options {
+  padding-top: 30%;
+}
+
+body {
+    background-color: rgb(4, 33, 43);
+  }
+  
+h1 {
+  color: rgb(180, 171, 48);
+  text-align: center;
+  margin: 10px;
+  border: 1px solid yellow;
+}
+
+label {
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-family: verdana;
+  font-size: 16px;
+}
+
+p {
+  text-align: center;
+  color: rgb(255, 255, 255);
+  font-family: verdana;
+  font-size: 20px;
+  height: 40px;
+  margin: 10px;
+}
+
+p.winner {
+  animation: blinker 0.2s infinite;
+}
+
+@keyframes blinker {
+  from { opacity: 1.0; }
+  0% { opacity: 0; }
+  to { opacity: 1.0; }
+}
+
+p.score {
+  margin-top: 0;
+  text-align: right;
+  padding: 0;
+}
+
+#score {
+  margin-left: auto;
+  width: 66px;
+  height: auto;
+  padding: 0;
+  border: 1px solid yellow;
+  border-radius: 5px;
+}
+
+.button {
+  font-size: 20px;
+  padding: 5px;  
+  text-align: center;
+  vertical-align: middle;
+}
+
+input.name {
+  font-size: 20px;
+  width: 50%;
+  height: 25px;
+}
+
+input.default {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background-color: rgb(70, 110, 50);
+  object-fit: cover;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+input.default:hover {
+  background-color: rgb(110, 150, 85);
+}
+
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"]:checked + img {
+  background-color: lightblue;
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+  height: 400px;
+  width: 400px;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+/*Defined inside game.html
+table.bigTable td {}
+#player1 {}
+#player2 {}
+*/
+
+td form {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#default {
+  background-color: rgb(72, 110, 49);
+}
+table.select-symbol {
+  margin-left: auto;
+  margin-right: auto;
+  height: auto;
+  width: 80%;
+}
+
+table.select-symbol tr, td {
+  padding: 10px;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  border: 1px solid #ccc;
+  cursor: pointer;
+}
+
+.imgGame {
+  width: 80%;
+  height: 80%;
+  border: none;
+  object-fit: contain;
+}
+
+.imgScore {
+  width: 64px;
+  height: auto;
+  background-color: lightblue;
+  border-radius: 2px;
+}
+
+.imgTurn {
+  width: 32px;
+  height: 32px;
+  background-color: lightblue;
+}
